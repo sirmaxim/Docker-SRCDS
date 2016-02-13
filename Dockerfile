@@ -22,4 +22,4 @@ WORKDIR     /home/container
 
 COPY        ./start.sh /start.sh
 
-CMD         ["/bin/bash", "./start.sh"]
+CMD         ["/bin/bash", "/start.sh"]

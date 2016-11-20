@@ -1,5 +1,5 @@
 ##
-# Minimalist Docker Container for SRCDS
+# Minimalist Docker Container for SRCDS: Ark
 # Built for Pterodactyl Panel
 #
 # MIT Licensed

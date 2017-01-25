@@ -35,7 +35,7 @@ if [ ! -f "/home/container/steamcmd/steamcmd.sh" ]; then
     cp -v steamcmd/linux32/steamclient.so .steam/sdk32/steamclient.so
 
     # Download SteamCMD for built in support for ARK's -automanagedmods option
-    if [ ! -f "/home/container/Engine/Binaries/ThirdParty/SteamCMD/Linux/steamcmd.sh"]; then
+    if [ ! -f "/home/container/Engine/Binaries/ThirdParty/SteamCMD/Linux/steamcmd.sh" ]; then
       mkdir -p /home/container/Engine/Binaries/ThirdParty/SteamCMD/Linux/;
       cd /home/container/Engine/Binaries/ThirdParty/SteamCMD/Linux/
 

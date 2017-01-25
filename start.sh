@@ -33,6 +33,25 @@ if [ ! -f "/home/container/steamcmd/steamcmd.sh" ]; then
     cd /home/container
     mkdir -p .steam/sdk32
     cp -v steamcmd/linux32/steamclient.so .steam/sdk32/steamclient.so
+
+    # Download SteamCMD for built in support for ARK's -automanagedmods option
+    if [ ! -f "/home/container/Engine/Binaries/ThirdParty/SteamCMD/Linux/steamcmd.sh"]; then
+      mkdir -p /home/container/Engine/Binaries/ThirdParty/SteamCMD/Linux/;
+      cd /home/container/Engine/Binaries/ThirdParty/SteamCMD/Linux/
+
+      set -x
+      curl -sSL -o steamcmd_linux.tar.gz https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
+      set +x
+
+      if [ "$?" -ne "0" ]; then
+        echo "There was an error while attempting to download SteamCMD. -automanagedmods will fail. (exit code: $?)"
+        exit 1
+      fi
+
+      tar -xzvf steamcmd_linux.tar.gz -C /home/container/Engine/Binaries/ThirdParty/SteamCMD/Linux/
+      rm -rf steamcmd_linux.tar.gz
+    fi
+
 else
     echo "Dependencies in place, to re-download this game please delete steamcmd.sh in the steamcmd directory."
 fi

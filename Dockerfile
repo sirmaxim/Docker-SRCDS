@@ -4,7 +4,7 @@
 #
 # MIT Licensed
 ##
-FROM ubuntu:15.10
+FROM ubuntu:16.04
 
 MAINTAINER  Dane Everitt, <dane@daneeveritt.com>
 ENV         DEBIAN_FRONTEND noninteractive
